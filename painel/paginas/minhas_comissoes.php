@@ -1,0 +1,328 @@
+<?php 
+@session_start();
+require_once("verificar.php");
+require_once("../conexao.php");
+
+$pag = 'minhas_comissoes';
+
+$data_hoje = date('Y-m-d');
+$data_ontem = date('Y-m-d', strtotime("-1 days",strtotime($data_hoje)));
+$mes_atual = Date('m');
+$ano_atual = Date('Y');
+$data_inicio_mes = $ano_atual."-".$mes_atual."-01";
+if($mes_atual == '4' || $mes_atual == '6' || $mes_atual == '9' || $mes_atual == '11'){
+	$dia_final_mes = '30';
+}else if($mes_atual == '2'){
+	$dia_final_mes = '28';
+}else{
+	$dia_final_mes = '31';
+}
+
+$data_final_mes = $ano_atual."-".$mes_atual."-".$dia_final_mes;
+$id_func = $_SESSION['id'];
+
+
+//verificar se ele tem a permissão de estar nessa página
+if(@$minhas_comissoes == 'ocultar'){
+    echo "<script>window.location='../index.php'</script>";
+    exit();
+}
+?>
+
+
+<div class="bs-example widget-shadow" style="padding:15px">
+	<div class="row">
+		<div class="col-md-5" style="margin-bottom:5px;">
+			<div style="float:left; margin-right:10px"><span><small><i title="Data de Vencimento Inicial" class="fa fa-calendar-o"></i></small></span></div>
+			<div  style="float:left; margin-right:20px">
+				<input type="date" class="form-control " name="data-inicial"  id="data-inicial-caixa" value="<?php echo $data_hoje ?>" required>
+			</div>
+			<div style="float:left; margin-right:10px"><span><small><i title="Data de Vencimento Final" class="fa fa-calendar-o"></i></small></span></div>
+			<div  style="float:left; margin-right:30px">
+				<input type="date" class="form-control " name="data-final"  id="data-final-caixa" value="<?php echo $data_hoje ?>" required>
+			</div>
+		</div>
+		<div class="col-md-2" align="center">	
+			<div > 
+				<small >
+					<a title="Conta de Ontem" class="text-muted" href="#" onclick="valorData('<?php echo $data_ontem ?>', '<?php echo $data_ontem ?>')"><span>Ontem</span></a> / 
+					<a title="Conta de Hoje" class="text-muted" href="#" onclick="valorData('<?php echo $data_hoje ?>', '<?php echo $data_hoje ?>')"><span>Hoje</span></a> / 
+					<a title="Conta do Mês" class="text-muted" href="#" onclick="valorData('<?php echo $data_inicio_mes ?>', '<?php echo $data_final_mes ?>')"><span>Mês</span></a>
+				</small>
+			</div>
+		</div>
+	<div class="col-md-3"  align="center">	
+			<div > 
+				<small >
+					<a title="Todos os Serviços" class="text-muted" href="#" onclick="buscarContas('')"><span>Todos</span></a> / 
+					<a title="Pendentes" class="text-muted" href="#" onclick="buscarContas('Não')"><span>Pendentes</span></a> / 
+					<a title="Pagos" class="text-muted" href="#" onclick="buscarContas('Sim')"><span>Pagos</span></a>
+				</small>
+			</div>
+		</div>	
+		<div class="col-md-2"  align="center">	
+			<div > 
+				<form action="rel/comissoes_class.php" target="_blank" method="POST">
+					<input type="hidden" name="dataInicial" id="dataInicial">
+					<input type="hidden" name="dataFinal" id="dataFinal">
+					<input type="hidden" name="pago" id="pago_rel">
+					<input type="hidden" name="funcionario" value="<?php echo $id_func ?>">
+				<button type="submit" class="text-danger link-botao"><i class="fa fa-file-pdf-o" class="text-danger"></i> <span class="text-primary">Relatório</span></button>
+				</form>
+			</div>
+		</div>
+		
+		<input type="hidden" id="buscar-contas">
+	</div>
+
+
+	
+	<hr>
+	<div id="listar">
+	</div>
+
+	
+</div>
+
+
+
+
+
+<!-- Modal Dados -->
+<div class="modal fade" id="modalDados" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header bg-primary text-white">
+				<h4 class="modal-title" id="exampleModalLabel"><span id="nome_dados"></span></h4>
+				<button id="btn-fechar-dados" aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"><span
+						class="text-white" aria-hidden="true">&times;</span></button>
+			</div>
+
+			<div class="modal-body">
+
+
+				<div class="row">
+
+
+					<div class="col-md-12">
+						<div class="tile">
+							<div class="table-responsive">
+								<table id="" class="text-left table table-bordered">
+									<tr>
+										<td style="width: 30%" class="bg-primary text-white">Valor</td>
+										<td><span id="valor_dados"></span></td>
+									</tr>
+
+									<tr>
+										<td class="bg-primary text-white">Data Lançamento</td>
+										<td><span id="data_lanc_dados"></span></td>
+									</tr>
+
+									<tr>
+										<td class="bg-primary text-white w_150">Vencimento</td>
+										<td><span id="data_venc_dados"></span></td>
+									</tr>
+
+									<tr>
+										<td class="bg-primary text-white w_150">Data Pgto</td>
+										<td><span id="data_pgto_dados"></span></td>
+									</tr>
+
+									<tr>
+										<td class="bg-primary text-white w_150">Usuário Lançamento</td>
+										<td><span id="usuario_lanc_dados"></span></td>
+									</tr>
+
+
+									<tr>
+										<td class="bg-primary text-white w_150">Usuário Baixa</td>
+										<td><span id="usuario_baixa_dados"></span></td>
+									</tr>
+
+									<tr>
+										<td class="bg-primary text-white w_150">Profissional</td>
+										<td><span id="nome_func_dados"></span></td>
+									</tr>
+
+									<tr>
+										<td  class="bg-primary text-white w_150">Telefone</td>
+										<td><span id="telefone_dados"></span></td>
+									</tr>
+
+									<tr>
+										<td class="bg-primary text-white w_150">Chave Pix</td>
+										<td><span id="chave_pix_dados"></span></td>
+									</tr>
+
+								</table>
+							</div>
+						</div>
+					</div>
+
+				
+
+
+				</div>
+
+
+
+
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="modalBaixar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="tituloModal">Baixar Conta: <span id="descricao-baixar"> </span></h4>
+					<button id="btn-fechar-baixar" type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -20px">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form id="form-baixar" method="post">
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="mb-3">
+									<label for="exampleFormControlInput1" class="form-label">Valor <small class="text-muted">(Total ou Parcial)</small></label>
+									<input onkeyup="totalizar()" type="text" class="form-control" name="valor-baixar"  id="valor-baixar" required>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group"> 
+									<label>Local Saída</label> 
+									<select class="form-control sel4" name="saida-baixar" id="saida-baixar" required style="width:100%;">	
+									<?php 
+									$query = $pdo->query("SELECT * FROM formas_pgto order by id asc");
+									$res = $query->fetchAll(PDO::FETCH_ASSOC);
+									for($i=0; $i < @count($res); $i++){
+										foreach ($res[$i] as $key => $value){}
+											?>	
+										<option value="<?php echo $res[$i]['nome'] ?>"><?php echo $res[$i]['nome'] ?></option>
+									<?php } ?>
+								</select>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="mb-3">
+									<label for="exampleFormControlInput1" class="form-label">Data da Baixa</label>
+									<input type="date" class="form-control" name="data-baixar"  id="data-baixar" value="<?php echo date('Y-m-d') ?>" >
+								</div>
+							</div>
+						</div>	
+						
+						<small><div id="mensagem-baixar" align="center"></div></small>
+						<input type="hidden" class="form-control" name="id-baixar"  id="id-baixar">
+					</div>
+					<div class="modal-footer">
+						
+						<button type="submit" class="btn btn-success">Baixar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript">var pag = "<?=$pag?>"</script>
+<script src="js/ajax.js"></script>
+<script type="text/javascript">
+	function carregarImg() {
+		var target = document.getElementById('target');
+		var file = document.querySelector("#foto").files[0];
+		var arquivo = file['name'];
+		resultado = arquivo.split(".", 2);
+		if(resultado[1] === 'pdf'){
+			$('#target').attr('src', "img/pdf.png");
+			return;
+		}
+		if(resultado[1] === 'rar' || resultado[1] === 'zip'){
+			$('#target').attr('src', "img/rar.png");
+			return;
+		}
+		var reader = new FileReader();
+		reader.onloadend = function () {
+			target.src = reader.result;
+		};
+		if (file) {
+			reader.readAsDataURL(file);
+		} else {
+			target.src = "";
+		}
+	}
+</script>
+<script type="text/javascript">
+	function valorData(dataInicio, dataFinal){
+	 $('#data-inicial-caixa').val(dataInicio);
+	 $('#data-final-caixa').val(dataFinal);	
+	listar();
+}
+</script>
+<script type="text/javascript">
+	$('#data-inicial-caixa').change(function(){
+			//$('#tipo-busca').val('');
+			listar();
+		});
+		$('#data-final-caixa').change(function(){						
+			//$('#tipo-busca').val('');
+			listar();
+		});	
+</script>
+<script type="text/javascript">
+	function listar(){
+	var dataInicial = $('#data-inicial-caixa').val();
+	var dataFinal = $('#data-final-caixa').val();	
+	var status = $('#buscar-contas').val();	
+	$('#dataInicial').val(dataInicial);
+	$('#dataFinal').val(dataFinal);
+	$('#pago_rel').val(status);
+	
+    $.ajax({
+        url: 'paginas/' + pag + "/listar.php",
+        method: 'POST',
+        data: {dataInicial, dataFinal, status},
+        dataType: "html",
+        success:function(result){
+            $("#listar").html(result);
+            $('#mensagem-excluir').text('');
+        }
+    });
+}
+</script>
+<script type="text/javascript">
+	function buscarContas(status){
+	 $('#buscar-contas').val(status);
+	 listar();
+	}
+</script>
+		<script type="text/javascript">
+			$("#form-baixar").submit(function () {
+				event.preventDefault();
+				var formData = new FormData(this);
+				$.ajax({
+					url: 'paginas/' + pag + "/baixar.php",
+					type: 'POST',
+					data: formData,
+					success: function (mensagem) {
+						$('#mensagem-baixar').text('');
+						$('#mensagem-baixar').removeClass()
+						if (mensagem.trim() == "Baixado com Sucesso") {                    
+							$('#btn-fechar-baixar').click();
+							listar();
+						} else {
+							$('#mensagem-baixar').addClass('text-danger')
+							$('#mensagem-baixar').text(mensagem)
+						}
+					},
+					cache: false,
+					contentType: false,
+					processData: false,
+				});
+			});
+		</script>
