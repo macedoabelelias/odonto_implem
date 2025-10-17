@@ -26,10 +26,10 @@ try {
 
 
 //variaveis globais
-$nome_sistema = 'Nome do Sistema';
-$email_sistema = 'contato@hugocursos.com.br';
-$telefone_sistema = '(31)97527-5084';
-$instagram_sistema = 'portalhugocursos';
+$nome_sistema = 'AM Systems';
+$email_sistema = 'contato@amsystems.com.br';
+$telefone_sistema = '(16)99992-7427';
+$instagram_sistema = 'abelmacedo61';
 
 
 $query = $pdo->query("SELECT * from config");

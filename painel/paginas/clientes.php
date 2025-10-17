@@ -102,7 +102,7 @@ if (@$clientes == 'ocultar') {
 
 
 						<div class="col-md-5">
-							<label>Email</label>
+							<label>E-mail</label>
 							<input type="email" class="form-control" id="email" name="email" placeholder="Digite o Email">
 						</div>
 
@@ -195,26 +195,30 @@ if (@$clientes == 'ocultar') {
 							<input type="text" class="form-control" id="tipo_sanguineo" name="tipo_sanguineo" placeholder="Tipo Sanguineo">
 						</div>
 
-						<div class="col-md-2 mb-2">
-							<label>Sexo</label>
+						<div class="col-md-3 mb-2">
+							<label>Gênero</label>
 							<select class="form-select" id="sexo" name="sexo">
-								<option value="M">Masculino</option>
-								<option value="F">Feminino</option>								
+								<option value="M">Cis Masculino</option>
+								<option value="F">Cis Feminino</option>	
+								<option value="TM">Trans Masculino</option>
+								<option value="TF">Trans Feminino</option>
+								<option value="O">Outros</option>							
 							</select>
 						</div>
 
 						<div class="col-md-4 mb-2">
 							<label>Profissão</label>
-							<input type="text" class="form-control" id="profissao" name="profissao" placeholder="Tipo Sanguineo">
+							<input type="text" class="form-control" id="profissao" name="profissao" placeholder="Profissão">
 						</div>
 
-						<div class="col-md-3 mb-2">
+						<div class="col-md-2 mb-2">
 							<label>Estado Civil</label>
 							<select class="form-select" id="estado_civil" name="estado_civil">
 								<option value="Solteiro(a)">Solteiro(a)</option>
 								<option value="Casado(a)">Casado(a)</option>		
 								<option value="Divorciado(a)">Divorciado(a)</option>		
-								<option value="Viúvo(a)">Viúvo(a)</option>								
+								<option value="Viúvo(a)">Viúvo(a)</option>
+								<option value="Outros">Outros</option>								
 							</select>
 						</div>
 					</div>
@@ -249,7 +253,7 @@ if (@$clientes == 'ocultar') {
 						</div>
 
 						<div class="col-md-3 mb-2">
-							<label>Telefone 2</label>
+							<label>Telefone Resp</label>
 							<input type="text" class="form-control" id="telefone2" name="telefone2" placeholder="Outro Telefone">
 						</div>
 					</div>
@@ -314,7 +318,7 @@ if (@$clientes == 'ocultar') {
 						</div>
 						<div style="margin-bottom: 5px; border-bottom:1px solid #cecece; padding-bottom:3px">			
 							<span style="margin-right: 20px"><b>Tipo Sanguíneo</b> <span id="tipo_dados"></span></span>			
-						<span style="margin-right: 20px"><b>Sexo</b> <span id="sexo_dados"></span></span>
+						<span style="margin-right: 20px"><b>Gênero</b> <span id="sexo_dados"></span></span>
 						<span style=""><b>Convênio</b> <span id="convenio_dados"></span></span>
 						</div>
 						<div style="margin-bottom: 5px; border-bottom:1px solid #cecece; padding-bottom:3px">			

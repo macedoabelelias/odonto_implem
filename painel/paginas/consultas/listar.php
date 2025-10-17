@@ -225,7 +225,7 @@ echo <<<HTML
 
 		<big><a class="btn btn-danger-light btn-sm " href="#" onclick="atestado('{$cliente}', '{$nome_paciente}')" title="Gerar Atestado"><i class="fa fa-file-pdf-o"></i></a></big>
 
-		<big><a class="btn btn-success-light btn-sm " href="#" onclick="odontograma('{$cliente}', '{$nome_paciente}')" title="Odontograma"><i class="fa fa-tooth"></i></a></big>
+		<big><a class="btn btn-dark-light btn-sm " href="#" onclick="odontograma('{$cliente}', '{$nome_paciente}')" title="Odontograma"><i class="fa fa-tooth"></i></a></big>
 
 
 		<form   method="POST" action="rel/prontuario_class.php" target="_blank" style="display:inline-block">

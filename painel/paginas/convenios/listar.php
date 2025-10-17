@@ -48,7 +48,7 @@ echo <<<HTML
 	
 	<a href="#" class="btn btn-danger-light btn-sm" onclick="excluir('{$id}')" title="Excluir"><i class="fa fa-trash-can "></i></a>
 
-<big><a href="#" class="btn btn-primary-light btn-sm" onclick="arquivo('{$id}', '{$nome}')" title="Inserir / Ver Arquivos"><i class="fa fa-file-o "></i></a></big>
+<big><a href="#" class="btn btn-primary-light btn-sm" onclick="arquivo('{$id}', '{$nome}')" title="Inserir / Ver Arquivos"><i class="fa fa-archive "></i></a></big>
 </td>
 </tr>
 HTML;

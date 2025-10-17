@@ -111,11 +111,11 @@ HTML;
 <a class="btn btn-success-light btn-sm" href="#" onclick="ativar('{$id}', '{$acao}')" title="{$titulo_link}"><i class="fa {$icone} "></i></a>
 
 
-<a class="btn btn-secondary-light btn-sm" href="#" onclick="arquivo('{$id}', '{$nome}')" title="Inserir / Ver Arquivos"><i class="fa fa-file-o " ></i></a>
+<a class="btn btn-secondary-light btn-sm" href="#" onclick="arquivo('{$id}', '{$nome}')" title="Inserir / Ver Arquivos"><i class="fa fa-archive " ></i></a>
 
 <big><a class="{$mostrar_func} btn btn-primary-light btn-sm" href="#" onclick="procedimentos('{$id}', '{$nome}')" title="Inserir Procedimentos"><i class="fa fa-stethoscope "></i></a></big>
 
-<big><a class="{$mostrar_func} btn btn-success-light btn-sm" href="#" onclick="horarios('{$id}', '{$nome}')" title="Inserir Horários"><i class="fa fa-calendar-o "></i></a></big>
+<big><a class="{$mostrar_func} btn btn-success-light btn-sm" href="#" onclick="horarios('{$id}', '{$nome}')" title="Inserir Horários"><i class="fa fa-calendar-plus "></i></a></big>
 
 </td>
 </tr>

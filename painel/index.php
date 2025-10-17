@@ -304,7 +304,7 @@ if (@count($res1) > 0) {
 
 									<li class="dropdown nav-item  main-header-message <?php echo $receber ?>">
 										<a class="new nav-link" data-bs-toggle="dropdown" href="javascript:void(0);">
-											<small><i class="fa fa-dollar"></i></small>
+											<small><i class="fa fa-money"></i></small>
 											<span class="badge  header-badge" style="background:green"><?php echo $linhas ?></span>
 										</a>
 
@@ -372,7 +372,7 @@ if (@count($res1) > 0) {
 
 									<li class="dropdown nav-item  main-header-message <?php echo $pagar ?>">
 										<a class="new nav-link" data-bs-toggle="dropdown" href="javascript:void(0);">
-											<small><i class="fa fa-dollar"></i></small>
+											<small><i class="fa fa-money"></i></small>
 											<span class="badge  header-badge" style="background:red"><?php echo $linhas ?></span>
 										</a>
 
@@ -518,7 +518,7 @@ if (@count($res1) > 0) {
 
 							<li class="slide <?php echo @$menu_cadastros ?>">
 								<a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0);">
-									<i class="fa fa-save text-white mt-1"></i>
+									<i class="fa fa-folder-open text-white mt-1"></i>
 									<span class="side-menu__label" style="margin-left: 15px">Cadastros</span><i
 										class="angle fe fe-chevron-right"></i></a>
 								<ul class="slide-menu">
@@ -561,7 +561,7 @@ if (@count($res1) > 0) {
 
 								<li class="slide <?php echo @$menu_agendamentos ?>">
 								<a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0);">
-									<i class="fa fa-calendar text-white mt-1"></i>
+									<i class="fa fa-calendar-plus text-white mt-1"></i>
 									<span class="side-menu__label" style="margin-left: 15px">Agendamentos</span><i
 										class="angle fe fe-chevron-right"></i></a>
 								<ul class="slide-menu">
@@ -638,7 +638,7 @@ if (@count($res1) > 0) {
 
 							<li class="slide <?php echo @$minhas_comissoes ?>">
 								<a class="side-menu__item" href="minhas_comissoes">
-									<i class="fa fa-money text-white"></i>
+									<i class="fa fa-pie-chart text-white"></i>
 									<span class="side-menu__label" style="margin-left: 15px">Minhas Comissões</span></a>
 							</li>
 
@@ -648,14 +648,14 @@ if (@count($res1) > 0) {
 
 							<li class="slide <?php echo @$odontogramas ?>">
 								<a class="side-menu__item" href="odontogramas">
-									<i class="fa fa-file-o text-white"></i>
+									<i class="fa fa-tooth text-white"></i>
 									<span class="side-menu__label" style="margin-left: 15px">Odontogramas</span></a>
 							</li>
 
 
 							<li class="slide <?php echo @$tratamentos ?>">
 								<a class="side-menu__item" href="tratamentos">
-									<i class="fa fa-calendar-plus-o text-white"></i>
+									<i class="fa fa-medkit text-white"></i>
 									<span class="side-menu__label" style="margin-left: 15px">Tratamentos </span></a>
 							</li>
 
@@ -663,14 +663,14 @@ if (@count($res1) > 0) {
 
 							<li class="slide <?php echo @$orcamentos ?>">
 								<a class="side-menu__item" href="orcamentos">
-									<i class="fa fa-file-pdf-o text-white"></i>
+									<i class="fa fa-paste text-white"></i>
 									<span class="side-menu__label" style="margin-left: 15px">Orçamentos </span></a>
 							</li>
 
 
 							<li class="slide <?php echo @$marketing ?>">
 								<a class="side-menu__item" href="marketing">
-									<i class="fa fa-dashboard text-white"></i>
+									<i class="fa fa-desktop text-white"></i>
 									<span class="side-menu__label" style="margin-left: 15px">Marketing </span></a>
 							</li>
 
@@ -678,14 +678,14 @@ if (@count($res1) > 0) {
 
 							<li class="slide <?php echo @$caixas ?>">
 								<a class="side-menu__item" href="caixas">
-									<i class="fa fa-briefcase text-white"></i>
+									<i class="fa fa-line-chart text-white"></i>
 									<span class="side-menu__label" style="margin-left: 15px">Caixas <?php echo $texto_caixa ?></span></a>
 							</li>
 
 
 							<li class="slide <?php echo @$tarefas ?>">
 								<a class="side-menu__item" href="tarefas">
-									<i class="fa fa-calendar text-white"></i>
+									<i class="fa fa-calendar-check text-white"></i>
 									<span class="side-menu__label" style="margin-left: 15px">Tarefas / Agenda</span></a>
 							</li>
 
@@ -762,8 +762,8 @@ if (@count($res1) > 0) {
 		<?php if ($pagina != 'vendas') { ?>
 			<div class="main-footer">
 				<div class="container-fluid pt-0 ht-100p">
-					Copyright © <?php echo date('Y'); ?> Desevolverdor <a href="https://www.monielsistemas.com.br" target="_blank"
-						class="text-primary"> hugocursos.com.br</a>. Todos
+					Copyright © <?php echo date('Y'); ?> Desevolverdor: <a href="https://www.monielsistemas.com.br" target="_blank"
+						class="text-primary"> AM Systems - Abel Macedo</a>. Todos
 					os direitos reservados
 				</div>
 			</div>
