@@ -154,7 +154,7 @@ if($fundo_login != "" and $fundo_login != "sem-foto.png"){ ?>
 
 											<div class="main-signin-footer text-center mt-3">
 
-												<p><a href="" class="mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Esqueceu sua
+												<p><a href="" class="mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color:#84abcf">Esqueceu sua
 														Senha?</a></p>
 											</div>
 										</div>
