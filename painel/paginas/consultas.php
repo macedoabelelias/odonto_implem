@@ -187,7 +187,8 @@ if(@$consultas == 'ocultar'){
 							</div>
 							<div class="col-md-6">	
 								<label>Data Final</label>
-								<input type="date" name="dataFinal" class="form-control" placeholder="" value="<?php echo $data_atual ?>" >			
+								<input type="date" name="dataFinal" class="form-control" placeholder="" 
+								value="<?php echo $data_atual ?>" >			
 							</div>															
 				
 						</div>
@@ -199,7 +200,7 @@ if(@$consultas == 'ocultar'){
 						</div>
 						<div class="row">
 							<div class="col-md-12">	
-								<label>Informações Relevantes</label>
+								<label>Informações Relevantes / CID</label>
 								<input type="text" name="obs" class="form-control" placeholder="Demais Informações" >	
 							</div>
 						</div>
@@ -215,6 +216,7 @@ if(@$consultas == 'ocultar'){
 		</div>
 	</div>
 </div>
+
 
 <!-- Modal Receita -->
 <div class="modal fade" id="modalReceita" tabindex="-1" aria-labelledby="exampleModalLabel" 

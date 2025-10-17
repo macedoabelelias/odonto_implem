@@ -660,7 +660,7 @@ if(@count($res) > 0){
 
 <?php if($total_deciduos > 0){ ?>
 <br>
-<div align="center" style="font-size: 11px">Decíduos (Leite)</div>
+<div align="center" style="font-size: 11px">Decíduos </div>
 
 <table id="Table_01" width="370" height="284" border="0" cellpadding="0" cellspacing="0" align="center">
 	<tr>

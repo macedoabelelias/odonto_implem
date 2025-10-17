@@ -75,7 +75,7 @@ body {font-family: 'Tw Cen MT', sans-serif;}
 .marca{
 	position:fixed;
 	left:50;
-	top:130;
+	top:200;
 	width:80%;
 	opacity:10%;
 }
@@ -91,7 +91,7 @@ if($marca_dagua == 'Sim'){ ?>
 		<table style="width: 100%; border: 0px solid #ccc;">
 			<tr>
 				<td style="border: 1px; solid #000; width: 20%; text-align: left;">
-					<img style="margin-top: 5px; margin-left: 7px;" id="imag" src="<?php echo $url_sistema ?>img/logo.jpg" width="140px">
+					<img style="margin-top: 2px; margin-left: 7px;" id="imag" src="<?php echo $url_sistema ?>img/logo.jpg" width="70px">
 				</td>
 				<td style="width: 20%; text-align: left; font-size: 13px;">
 				
@@ -127,78 +127,77 @@ if($marca_dagua == 'Sim'){ ?>
 					<td colspan="8" style="width:100%; font-size: 10px"><b>DADOS DO PACIENTE</b> </td>					
 				</tr>
 				<tr >
-					<td style="width:5%; border-right: 1px solid #000;border-bottom: : 1px solid #000;">NOME: </td>
+					<td style="width:5%; border-right: 1px solid #000;border-bottom: : 1px solid #000;"><b>NOME: </b></td>
 					<td style="width:35%; border-right: : 1px solid #000; border-bottom: : 1px solid #000;">
 						<?php echo mb_strtoupper($nome_paciente) ?>
 					</td>
 					
-					<td style="width:5%; border-right: 1px solid #000;border-bottom: : 1px solid #000;">CPF: </td>
+					<td style="width:5%; border-right: 1px solid #000;border-bottom: : 1px solid #000;"><b>CPF: </b></td>
 					<td style="width:13%; border-bottom: : 1px solid #000; border-right: 1px solid #000;">
 						<?php echo mb_strtoupper($cpf_paciente) ?>
 					</td>
-					<td style="width:9%; border-right: 1px solid #000;border-bottom: : 1px solid #000;">TELEFONE: </td>
+					<td style="width:9%; border-right: 1px solid #000;border-bottom: : 1px solid #000;"><b>TELEFONE: </b></td>
 					<td style="width:13%; border-bottom: : 1px solid #000; border-right: 1px solid #000;">
 						<?php echo mb_strtoupper($telefone_paciente) ?>
 					</td>
-					<td style="width:5%; border-right: 1px solid #000;border-bottom: : 1px solid #000;">SEXO: </td>
+					<td style="width:5%; border-right: 1px solid #000;border-bottom: : 1px solid #000;"><b>GÊNERO: </b> </td>
 					<td style="width:5%; border-bottom: : 1px solid #000;">
 						<?php echo mb_strtoupper($sexo) ?>
 					</td>
     			</tr>
     			<tr >
-					<td style="width:8%; border-right: 1px solid #000;border-bottom: : 1px solid #000;">CONVÊNIO: </td>
+					<td style="width:8%; border-right: 1px solid #000;border-bottom: : 1px solid #000;"><b>CONVÊNIO: </b></td>
 					<td style="width:30%; border-right: : 1px solid #000; border-bottom: : 1px solid #000;">
 						<?php echo mb_strtoupper($nome_convenio) ?>
 					</td>
 					
-					<td style="width:5%; border-right: 1px solid #000;border-bottom: : 1px solid #000;">IDADE: </td>
+					<td style="width:5%; border-right: 1px solid #000;border-bottom: : 1px solid #000;"><b>IDADE: </b></td>
 					<td style="width:11%; border-bottom: : 1px solid #000; border-right: 1px solid #000;">
 						<?php echo mb_strtoupper($idade) ?> Anos
 					</td>
-					<td style="width:10%; border-right: 1px solid #000;border-bottom: : 1px solid #000;">NASCIMENTO: </td>
+					<td style="width:10%; border-right: 1px solid #000;border-bottom: : 1px solid #000;"><b>NASCIMENTO: </b></td>
 					<td style="width:13%; border-bottom: : 1px solid #000; border-right: 1px solid #000;">
 						<?php echo mb_strtoupper($data_nascF) ?>
 					</td>
-					<td style="width:13%; border-right: 1px solid #000;border-bottom: : 1px solid #000;">TIPO SANGUÍNEO: </td>
+					<td style="width:13%; border-right: 1px solid #000;border-bottom: : 1px solid #000;"><b>TIPO SANGUÍNEO: </b></td>
 					<td style="width:5%; border-bottom: : 1px solid #000;">
 						<?php echo mb_strtoupper($tipo_sanguineo) ?>
 					</td>
     			</tr>
     			<tr >
-					<td style="width:8%; border-right: 1px solid #000;border-bottom: : 1px solid #000;">PROFISSÃO </td>
+					<td style="width:8%; border-right: 1px solid #000;border-bottom: : 1px solid #000;"><b>PROFISSÃO: </b></td>
 					<td colspan="3" style="width:30%; border-right: : 1px solid #000; border-bottom: : 1px solid #000;">
 						<?php echo mb_strtoupper($profissao) ?>
 					</td>
 					
 					
-					<td style="width:10%; border-right: 1px solid #000;border-bottom: : 1px solid #000;">ESTADO CIVIL: </td>
+					<td style="width:10%; border-right: 1px solid #000;border-bottom: : 1px solid #000;"><b>ESTADO CIVIL: </b></td>
 					<td colspan="3" style="width:13%; border-bottom: : 1px solid #000;">
 						<?php echo mb_strtoupper($estado_civil) ?>
 					</td>
 					
     			</tr>
     			<tr >
-					<td style="width:8%; border-right: 1px solid #000;border-bottom: : 1px solid #000;">OBS </td>
-					<td colspan="3" style="width:30%; border-right: : 1px solid #000; border-bottom: : 1px solid #000;">
-						<?php echo @mb_strtoupper($obs_paciente) ?>
-					</td>
-					
-					
 					<td style="width:10%; border-right: 1px solid #000;border-bottom: : 1px solid #000;">ENDEREÇO: </td>
-					<td colspan="3" style="width:13%; border-bottom: : 1px solid #000;">
+					<td colspan="3" style="width:13%; border-right: : 1px solid #000; border-bottom: : 1px solid #000;">
 						<?php echo mb_strtoupper($endereco_paciente) ?>
 					</td>
+
+					<td style="width:8%; border-right: 1px solid #000;border-bottom: : 1px solid #000;"><b>OBS </b></td>
+					<td colspan="3" style="width:30%; border-bottom: : 1px solid #000;">
+						<?php echo @mb_strtoupper($obs_paciente) ?>
+					</td>					
 					
     			</tr>
     			<?php if($nome_responsavel != ""){ ?>
     				<tr >
-					<td style="width:8%; border-right: 1px solid #000;border-bottom: : 1px solid #000;">RESP </td>
+					<td style="width:8%; border-right: 1px solid #000;border-bottom: : 1px solid #000;"><b>RESP </b></td>
 					<td colspan="3" style="width:30%; border-right: : 1px solid #000; border-bottom: : 1px solid #000;">
 						<?php echo mb_strtoupper($nome_responsavel) ?>
 					</td>
 					
 					
-					<td style="width:10%; border-right: 1px solid #000;border-bottom: : 1px solid #000;">CPF RESP: </td>
+					<td style="width:10%; border-right: 1px solid #000;border-bottom: : 1px solid #000;"><b>CPF RESP: </b></td>
 					<td colspan="3" style="width:13%; border-bottom: : 1px solid #000;">
 						<?php echo mb_strtoupper($cpf_responsavel) ?>
 					</td>

@@ -246,7 +246,7 @@ body {font-family: 'Tw Cen MT', sans-serif;}
 
 	left:50;
 
-	top:130;
+	top:200;
 
 	width:80%;
 
@@ -288,7 +288,7 @@ if($marca_dagua == 'Sim'){ ?>
 
 				<td style="border: 1px; solid #000; width: 20%; text-align: left;">
 
-					<img style="margin-top: 5px; margin-left: 7px;" id="imag" src="<?php echo $url_sistema ?>img/logo.jpg" width="140px">
+					<img style="margin-top: 2px; margin-left: 7px;" id="imag" src="<?php echo $url_sistema ?>img/logo.jpg" width="70px">
 
 				</td>
 
@@ -378,7 +378,7 @@ if($marca_dagua == 'Sim'){ ?>
 
 
 
-					<td style="width:5%; border-right: 1px solid #000;border-bottom: : 1px solid #000;">SEXO: </td>
+					<td style="width:5%; border-right: 1px solid #000;border-bottom: : 1px solid #000;">GÊNERO: </td>
 
 					<td style="width:5%; border-bottom: : 1px solid #000;">
 

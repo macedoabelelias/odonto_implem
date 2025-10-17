@@ -91,7 +91,7 @@ if($marca_dagua == 'Sim'){ ?>
 		<table style="width: 100%; border: 0px solid #ccc;">
 			<tr>
 				<td style="border: 1px; solid #000; width: 20%; text-align: left;">
-					<img style="margin-top: 1px; margin-left: 7px;" id="imag" src="<?php echo $url_sistema ?>img/logo.jpg" width="90px">
+					<img style="margin-top: 1px; margin-left: 7px;" id="imag" src="<?php echo $url_sistema ?>img/logo.jpg" width="70px">
 				</td>
 				<td style="width: 20%; text-align: left; font-size: 13px;">
 				
@@ -100,7 +100,7 @@ if($marca_dagua == 'Sim'){ ?>
 				
 				</td>
 				<td style="width: 55%; text-align: right; font-size: 9px;padding-right: 10px;">
-						<b><big>RECEITA MÉDICA</big></b><br>
+						<b><big>RECEITA ODONTOLÓGICA</big></b><br>
 
 						<br>
 						 <?php echo mb_strtoupper($data_hoje) ?>
@@ -137,7 +137,7 @@ if($marca_dagua == 'Sim'){ ?>
 		</table>
 
 		
-		<div align="left" style="margin-top: 25px; margin-bottom: 10px; border-bottom: 1px solid #000; font-size:12px"><b>MEDICAMENTOS</b></div>
+		<div align="left" style="margin-top: 45px; margin-bottom: 10px; border-bottom: 1px solid #000; font-size:12px"><b>MEDICAMENTOS</b></div>
 
 
 </div>
@@ -152,7 +152,7 @@ if($marca_dagua == 'Sim'){ ?>
 	</table>
 </div>
 
-<div id="content" style="margin-top: 70px;">
+<div id="content" style="margin-top: 100px;">
 <?php 
 $query = $pdo->query("SELECT * FROM receita where paciente = '$id' order by id asc");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);

@@ -127,7 +127,7 @@ if(@count($res2) > 0){
 <table class="printer-ticket">
 
 	<tr>
-		<th class="ttu" class="title" colspan="3"><img style="margin-top: 10px; margin-left: 50px;" id="imag" src="<?php echo $url_sistema ?>img/logo.jpg" width="180px">
+		<th class="ttu" class="title" colspan="3"><img style="margin-top: 10px; margin-left: 50px;" id="imag" src="<?php echo $url_sistema ?>img/logo.jpg" width="160px">
 		</th>
 	</tr>
 

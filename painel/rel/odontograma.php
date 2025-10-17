@@ -56,7 +56,7 @@ body {font-family: 'Tw Cen MT', sans-serif;}
 .marca{
 	position:fixed;
 	left:50;
-	top:100;
+	top:200;
 	width:80%;
 	opacity:10%;
 	transform: rotate(-30deg);
@@ -74,7 +74,7 @@ body {font-family: 'Tw Cen MT', sans-serif;}
 		<table style="width: 100%; border: 0px solid #ccc;">
 			<tr>
 				<td style="border: 1px; solid #000; width: 25%; text-align: left;">
-					<img style="margin-top: 0px; margin-left: 7px;" id="imag" src="<?php echo $url_sistema ?>img/logo.jpg" width="180px">
+					<img style="margin-top: 2px; margin-left: 7px;" id="imag" src="<?php echo $url_sistema ?>img/logo.jpg" width="80px">
 				</td>
 		
 				<td style="text-align: center; font-size: 10px;">
@@ -117,24 +117,24 @@ body {font-family: 'Tw Cen MT', sans-serif;}
 					<td colspan="4" style="width:100%; font-size: 10px"><b>DADOS DO PACIENTE</b> </td>					
 				</tr>
 				<tr >
-					<td style="width:10%; border-right: 1px solid #000;border-bottom: : 1px solid #000;">NOME: </td>
+					<td style="width:10%; border-right: 1px solid #000;border-bottom: : 1px solid #000;"><b>NOME: </b></td>
 					<td style="width:40%; border-right: : 1px solid #000; border-bottom: : 1px solid #000;">
 						<?php echo @mb_strtoupper($nome_cliente) ?>
 					</td>
 					
-					<td style="width:10%; border-right: 1px solid #000;border-bottom: : 1px solid #000;">ENDEREÇO: </td>
+					<td style="width:10%; border-right: 1px solid #000;border-bottom: : 1px solid #000;"><b>ENDEREÇO: </b></td>
 					<td style="width:40%; border-bottom: : 1px solid #000;">
 						<?php echo @mb_strtoupper($endereco_cliente) ?>
 
 					</td>
     			</tr>
     			<tr >
-					<td style="width:10%; border-right: 1px solid #000;">TELEFONE: </td>
+					<td style="width:10%; border-right: 1px solid #000;"><b>TELEFONE: </b></td>
 					<td style="width:40%; border-right: : 1px solid #000; ">
 						<?php echo @mb_strtoupper($tel_cliente) ?>
 					</td>
 					
-					<td style="width:10%; border-right: 1px solid #000;">EMAIL: </td>
+					<td style="width:10%; border-right: 1px solid #000;"><b>E-MAIL: </b></td>
 					<td style="width:40%; ">
 						<?php echo @mb_strtoupper($email_cliente) ?>
 					</td>
