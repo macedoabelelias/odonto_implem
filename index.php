@@ -96,7 +96,7 @@ if($fundo_login != "" and $fundo_login != "sem-foto.png"){ ?>
 							<div class="main-card-signin d-md-flex">
 								<div class="wd-100p">
 									<div class="d-flex mb-4 justify-content-center"><a href="index.php">
-											<img src="img/logo.jpg" class="sign-favicon" alt="logo" width="250px"></a></div>
+											<img src="img/logo.jpg" class="sign-favicon" alt="logo" width="350px" style="border-radius:8px"></a></div>
 									<div class="">
 										<div class="main-signup-header">
 

@@ -219,13 +219,13 @@ echo <<<HTML
 
 		<big><a class="btn btn-primary-light btn-sm " href="#" onclick="anamnese('{$cliente}', '{$nome_paciente}')" title="Editar Anamnese"><i class="fa fa-stethoscope "></i></a></big>
 
-		<big><a class="btn btn-success-light btn-sm " href="#" onclick="exames('{$cliente}', '{$nome_paciente}')" title="Solicitar Raio X"><i class="fa fa-files-o"></i></a></big>
+		<big><a class="btn btn-success-light btn-sm " href="#" onclick="exames('{$cliente}', '{$nome_paciente}')" title="Solicitar Exames"><i class="fa fa-files-o"></i></a></big>
 	
+		<big><a class="btn btn-primary-light btn-sm " href="#" onclick="receita('{$cliente}', '{$nome_paciente}')" title="Gerar Receita"><i class="fa fa-file-pdf-o"></i></a></big>
+
 		<big><a class="btn btn-danger-light btn-sm " href="#" onclick="atestado('{$cliente}', '{$nome_paciente}')" title="Gerar Atestado"><i class="fa fa-file-pdf-o"></i></a></big>
 
-		<big><a class="btn btn-dark-light btn-sm " href="#" onclick="odontograma('{$cliente}', '{$nome_paciente}', '{$id_odo}', '{$descricao_odo}','{$evolutivo_odo}')" title="Editar Odontograma"><i class="fa fa-file-o"></i></a></big>
-
-		<big><a class="btn btn-primary-light btn-sm" href="#" onclick="mostrar('{$nome_paciente}','{$telefone_paciente}','{$endereco_paciente}','{$data_nascF}','{$tipo_sanguineo}','{$nome_responsavel}','{$nome_convenio}', '{$sexo}','{$obs_paciente}','{$idade}','{$id}','{$cliente}','{$profissao}','{$estado_civil}')" title="Mostrar Dados" title="Mostrar Dados"><i class="fa fa-info-circle "></i></a></big>
+		<big><a class="btn btn-success-light btn-sm " href="#" onclick="odontograma('{$cliente}', '{$nome_paciente}')" title="Odontograma"><i class="fa fa-tooth"></i></a></big>
 
 
 		<form   method="POST" action="rel/prontuario_class.php" target="_blank" style="display:inline-block">
@@ -367,6 +367,14 @@ function atestado(paciente, nome){
 		$('#modalAtestado').modal('show');
 		
 }
+
+function receita(paciente, nome){
+		$('#id_receita').val(paciente);	
+		$('#nome_receita').text(nome);	
+		$('#modalReceita').modal('show');
+		listarRemedios(paciente);
+}
+
 function exames(paciente, nome){
 		$('#id_exame').val(paciente);	
 		$('#nome_exame').text(nome);	

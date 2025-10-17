@@ -216,9 +216,70 @@ if(@$consultas == 'ocultar'){
 	</div>
 </div>
 
+<!-- Modal Receita -->
+<div class="modal fade" id="modalReceita" tabindex="-1" aria-labelledby="exampleModalLabel" 
+aria-hidden="true">
+	<div class="modal-dialog modal-xl" ;>
+		<div class="modal-content">
+			<div class="modal-header bg-primary text-white">
+				<h4 class="modal-title" id="tituloModal"> <span id="nome_receita"> </span></h4>
+				</h4>
+				<button id="btn-fechar-atestado" aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"><span
+						class="text-white" aria-hidden="true">&times;</span></button>
+			</div>
+
+			<form method="POST" action="rel/receita_class.php" target="_blank">
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-3">	
+								<label>Medicamento</label>
+								<input type="text" id="remedio" class="form-control" placeholder="Descrição do Medicamento" >			
+							</div>
+
+							<div class="col-md-3">	
+								<label>Quantidade</label>
+								<input type="text" id="quantidade" class="form-control" placeholder="Quantidade do Medicamento">			
+							</div>	
+						
+				
+					<div class="col-md-5">	
+								<label>Posologia</label>
+								<input type="text" id="uso" class="form-control" placeholder="Posologia do Medicamento">			
+							</div>	
+
+							<!-- <div class="col-md-1" style="margin-top: 22px">
+								
+								<button onclick="inserirItem()" type="button" class="btn btn-success"><i class="fa fa-check"></i></button>	
+							</div>	 -->
+				</div>
+
+				<!-- <div class="row" style="margin-top: 20px; border-top: 1px solid #595858">
+					<div id="listar_remedios">
+						
+					</div>
+				</div> -->
+
+				<br>
+				<input type="hidden" name="id" id="id_receita">
+				<small><div id="mensagem_receita" align="center" class="mt-3"></div></small>		
+			</div>
+	
+				
+			<div class="modal-footer"> 
+
+			<!-- <a onclick="limparReceita()" class="btn btn-danger">Limpar Receita</a> -->
+
+				<button type="submit" class="btn btn-primary">Gerar Receita</button>
+			</div>
+
+			</form>		
+		</div>
+	</div>
+</div>
 
 
-<!-- Modal RaioX -->
+
+<!-- Modal Exames -->
 <div class="modal fade" id="modalExames" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
@@ -510,11 +571,11 @@ if(@$consultas == 'ocultar'){
 <div class="modal fade" id="modalRelatorio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
-			<div class="modal-header">
+			<div class="modal-header bg-primary text-white">
 				<h4 class="modal-title" id="exampleModalLabel"><span id="nome_relatorio"></span>		
 
 				</h4>
-				<button id="btn-fechar-relatorio" type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -25px">
+				<button id="btn-fechar-relatorio" aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button" style="margin-top: -25px; color:white">
 					<span aria-hidden="true">&times;</span>
 				</button>
 

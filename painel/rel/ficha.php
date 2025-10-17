@@ -17,6 +17,7 @@ if($historico != "" and $historico != "Não"){
 	$limite = $historico;
 }
 
+$id_paciente = $id;
 
 $query2 = $pdo->query("SELECT * FROM clientes where id = '$id'");
 $res2 = $query2->fetchAll(PDO::FETCH_ASSOC);
@@ -304,11 +305,11 @@ if($total_itens == 0){
 
 
 
-<?php 
+<!-- <?php 
 if($id_odontograma > 0){
 	include('script_odontograma.php');
 }
- ?>
+ ?> -->
 
 
 

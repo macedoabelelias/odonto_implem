@@ -4,9 +4,12 @@
 
 
 :root {
-  --template1: #0e5feb;
-  --template2: #0a33a6;
-  --template3: #2e5cf2; 
+    /*  Padrão  */
+  --template1: #6589a8;
+   /* Painel lateral */
+  --template2: #8fb3d3;
+    /* cor hover */
+  --template3: #8fb3d3; 
 }
 .row{
     margin-bottom: 12px;
